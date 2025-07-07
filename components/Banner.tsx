@@ -6,7 +6,7 @@ export default function Banner() {
       {/* Video de YouTube como fondo adaptado sin bordes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <iframe
-          className="absolute top-1/2 left-1/2 w-[300vw] h-[300vh] -translate-x-1/2 -translate-y-1/2"
+          className="absolute top-1/2 left-1/2 w-[350vw] lg:w-full h-[300vh] -translate-x-1/2 -translate-y-1/2"
           src="https://www.youtube.com/embed/Zd1xwMHHqm8?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0&loop=1&playlist=Zd1xwMHHqm8"
           title="Video de fondo"
           frameBorder="0"
@@ -16,7 +16,7 @@ export default function Banner() {
       </div>
 
       {/* Capa de oscurecimiento suave */}
-      <div className="absolute inset-0 bg-black/30 z-0 pointer-events-none" />
+      <div className="absolute inset-0 bg-black/20 z-0 pointer-events-none" />
 
       {/* Capa de texto encima */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-center px-4 pointer-events-none">
