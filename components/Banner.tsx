@@ -15,6 +15,9 @@ export default function Banner() {
         ></iframe>
       </div>
 
+      {/* Capa de oscurecimiento suave */}
+      <div className="absolute inset-0 bg-black/30 z-0 pointer-events-none" />
+
       {/* Capa de texto encima */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-center px-4 pointer-events-none">
         <h1 className="text-white text-xl sm:text-2xl lg:text-6xl font-bold">
