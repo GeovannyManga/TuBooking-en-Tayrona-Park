@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { useContext, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { RoomsContext } from '../../context/roomsContext';
+import NavBar from "../../components/NavBar";
+import Footer from "../../components/Footer";
 
 interface RoomDescription {
   ubicacion: string;
@@ -21,8 +23,6 @@ interface Room {
   bannerImage: string[];
   description: RoomDescription;
 }
-
-// Carrusel de imágenes sin librerías
 const ImageCarousel = ({ images }: { images: string[] }) => {
   const [index, setIndex] = useState(0);
 
@@ -31,7 +31,7 @@ const ImageCarousel = ({ images }: { images: string[] }) => {
   const goTo = (i: number) => setIndex(i);
 
   return (
-    <div className="relative w-full h-96 rounded-xl overflow-hidden">
+    <div className="relative w-full aspect-video bg-black rounded-xl overflow-hidden">
       {/* Imagen activa */}
       <div className="relative w-full h-full">
         <Image
@@ -39,7 +39,7 @@ const ImageCarousel = ({ images }: { images: string[] }) => {
           alt={`Imagen ${index + 1}`}
           fill
           priority
-          className="object-cover w-full h-full"
+          className="object-contain w-full h-full"
           sizes="(max-width: 768px) 100vw, 768px"
         />
       </div>
@@ -47,13 +47,13 @@ const ImageCarousel = ({ images }: { images: string[] }) => {
       {/* Flechas */}
       <button
         onClick={prev}
-        className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/40 text-white px-3 py-2 rounded-full"
+        className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 text-white px-3 py-2 rounded-full hover:bg-black/70"
       >
         ‹
       </button>
       <button
         onClick={next}
-        className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/40 text-white px-3 py-2 rounded-full"
+        className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 text-white px-3 py-2 rounded-full hover:bg-black/70"
       >
         ›
       </button>
@@ -74,6 +74,7 @@ const ImageCarousel = ({ images }: { images: string[] }) => {
   );
 };
 
+
 const DetailPage = () => {
   const { rooms } = useContext(RoomsContext);
   console.log(rooms)
@@ -91,41 +92,49 @@ const selectedRoom: Room | undefined = room[0];
 
 
   return (
-    <div className="max-w-4xl mx-auto p-4 space-y-6">
-      {/* Carrusel */}
-      <ImageCarousel images={selectedRoom.bannerImage} />
-
-      {/* Info principal */}
-      <div className="space-y-1">
-        <h1 className="text-3xl font-bold">{selectedRoom.title}</h1>
-        <p className="text-gray-600 text-lg">{selectedRoom.location}</p>
-        <p className='text-gray-600 text-lg'>Desde tan solo:</p>
-        <p className="text-2xl text-green-600 font-semibold">
-  ${selectedRoom.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} COP
-</p>
-
-      </div>
-
-      {/* Descripción */}
-      <div className="bg-gray-100 rounded-lg p-5 space-y-4 text-base leading-relaxed">
-        <p><strong>📍 Ubicación:</strong> {selectedRoom.description.ubicacion}</p>
-        <p><strong>🏕 Alojamiento:</strong> {selectedRoom.description.alojamiento}</p>
-        <p><strong>🛎 Servicios:</strong><br />{selectedRoom.description.servicios}</p>
-        <p><strong>🎯 Actividades:</strong> {selectedRoom.description.actividades}</p>
-        <div>
-          <strong>💬 Opiniones:</strong>
-          <ul className="list-disc pl-6 mt-1 text-gray-700 italic">
-            {selectedRoom.description.opiniones.map((op, idx) => (
-              <li key={idx}>“{op}”</li>
-            ))}
-          </ul>
+    <div>
+        <NavBar></NavBar>
+      <div className="max-w-4xl mx-auto p-4 space-y-6">
+        {/* Carrusel */}
+        <ImageCarousel images={selectedRoom.bannerImage} />
+        {/* Info principal */}
+        <div className="space-y-1">
+          <h1 className="text-3xl font-bold">{selectedRoom.title}</h1>
+          <p className="text-gray-600 text-lg">{selectedRoom.location}</p>
+          <p className='text-gray-600 text-lg'>Desde tan solo:</p>
+          <p className="text-2xl text-green-600 font-semibold">
+        ${selectedRoom.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} COP
+      </p>
         </div>
-      </div>
+        {/* Descripción */}
+        <div className="bg-gray-100 rounded-lg p-5 space-y-4 text-base leading-relaxed">
+          <p><strong>📍 Ubicación:</strong> {selectedRoom.description.ubicacion}</p>
+          <p><strong>🏕 Alojamiento:</strong> {selectedRoom.description.alojamiento}</p>
+          <p><strong>🛎 Servicios:</strong><br />{selectedRoom.description.servicios}</p>
+          <p><strong>🎯 Actividades:</strong> {selectedRoom.description.actividades}</p>
+          <div>
+            <strong>💬 Opiniones:</strong>
+            <ul className="list-disc pl-6 mt-1 text-gray-700 italic">
+              {selectedRoom.description.opiniones.map((op, idx) => (
+                <li key={idx}>“{op}”</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        {/* Botón */}
+       <a
+  href={`https://wa.me/573106011889?text=${encodeURIComponent(
+    `Hola, quiero reservar una habitación dentro del establecimiento ${selectedRoom.title}`
+  )}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg w-full text-lg text-center block"
+>
+  Reservar por WhatsApp
+</a>
 
-      {/* Botón */}
-      <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg w-full text-lg">
-        Reservar
-      </button>
+      </div>
+      <Footer></Footer>
     </div>
   );
 };

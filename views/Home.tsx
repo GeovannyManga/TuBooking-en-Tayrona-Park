@@ -5,6 +5,7 @@ import CardRegion from "../components/CardRegion";
 import CarrucelRegion from "../components/CarrucelRegion";
 import Cards from "../components/Cards";
 import Footer from "../components/Footer";
+import Legal from "../components/legal";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
          <Banner></Banner>
          <CardRegion></CardRegion>
          <Cards></Cards>
+         <Legal></Legal>
          <CarrucelRegion></CarrucelRegion>
          <Footer></Footer>
 

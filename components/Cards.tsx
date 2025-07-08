@@ -33,7 +33,7 @@ export default function RoomCards() {
   }, [rooms, locationFilter, maxPrice]);
 
   return (
-    <div className="bg-blue-50 py-12 px-4 sm:px-6 lg:px-12">
+    <div id='cards' className="bg-blue-50 py-12 px-4 sm:px-6 lg:px-12">
       <div className="max-w-7xl mx-auto text-center mb-6">
         <h3 className="text-sm text-blue-600 font-semibold">Tayrona Rooms</h3>
         <h2 className="text-3xl font-bold text-gray-800 mb-2">

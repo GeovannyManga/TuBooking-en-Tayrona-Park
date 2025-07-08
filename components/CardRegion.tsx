@@ -4,11 +4,11 @@ import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 
 const cards = [
-  { title: 'Cañaveral', img: '/cañaveral.jpg', rotate: '-rotate-[6deg]', link:'https://wa.me/573106011889?text=Hola%2C%20estoy%20interesado%20en%20los%20paquetes%20que%20ofrecen%20y%20quisiera%20más%20información.', offset: 'translate-y-10' },
-  { title: 'Arrecife', img: '/arrecife.webp', rotate: '-rotate-[3deg]', link:'https://wa.me/573106011889?text=Hola%2C%20estoy%20interesado%20en%20los%20paquetes%20que%20ofrecen%20y%20quisiera%20más%20información.', offset: 'translate-y-3' },
-  { title: 'Piscina natural', img: '/piscina.jpg', rotate: 'rotate-0', link:'https://wa.me/573106011889?text=Hola%2C%20estoy%20interesado%20en%20los%20paquetes%20que%20ofrecen%20y%20quisiera%20más%20información.', offset: 'translate-y-0' },
-  { title: 'Cabo San Juan', img: '/cabo.jpg', rotate: 'rotate-[3deg]', link:'https://wa.me/573106011889?text=Hola%2C%20estoy%20interesado%20en%20los%20paquetes%20que%20ofrecen%20y%20quisiera%20más%20información.', offset: 'translate-y-3' },
-  { title: 'Playa Brava', img: '/nudista.jpeg', rotate: 'rotate-[6deg]', link:'https://wa.me/573106011889?text=Hola%2C%20estoy%20interesado%20en%20los%20paquetes%20que%20ofrecen%20y%20quisiera%20más%20información.', offset: 'translate-y-10' },
+  { title: 'Cañaveral', img: '/cañaveral.jpg', rotate: '-rotate-[6deg]', link:'https://wa.me/573106011889?text=Hola%2C%20he%20visto%20los%20tours%20tur%C3%ADsticos%20que%20ofrecen%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20paquetes.%20%C2%BFPodr%C3%ADas%20contarme%20m%C3%A1s%3F', offset: 'translate-y-10' },
+  { title: 'Arrecife', img: '/arrecife.webp', rotate: '-rotate-[3deg]', link:'https://wa.me/573106011889?text=Hola%2C%20he%20visto%20los%20tours%20tur%C3%ADsticos%20que%20ofrecen%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20paquetes.%20%C2%BFPodr%C3%ADas%20contarme%20m%C3%A1s%3F', offset: 'translate-y-3' },
+  { title: 'Piscina natural', img: '/piscina.jpg', rotate: 'rotate-0', link:'https://wa.me/573106011889?text=Hola%2C%20he%20visto%20los%20tours%20tur%C3%ADsticos%20que%20ofrecen%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20paquetes.%20%C2%BFPodr%C3%ADas%20contarme%20m%C3%A1s%3F', offset: 'translate-y-0' },
+  { title: 'Cabo San Juan', img: '/cabo.jpg', rotate: 'rotate-[3deg]', link:'https://wa.me/573106011889?text=Hola%2C%20he%20visto%20los%20tours%20tur%C3%ADsticos%20que%20ofrecen%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20paquetes.%20%C2%BFPodr%C3%ADas%20contarme%20m%C3%A1s%3F', offset: 'translate-y-3' },
+  { title: 'Playa Brava', img: '/nudista.jpeg', rotate: 'rotate-[6deg]', link:'https://wa.me/573106011889?text=Hola%2C%20he%20visto%20los%20tours%20tur%C3%ADsticos%20que%20ofrecen%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20paquetes.%20%C2%BFPodr%C3%ADas%20contarme%20m%C3%A1s%3F', offset: 'translate-y-10' },
 ];
 
 export default function CardRegion() {
@@ -30,14 +30,14 @@ export default function CardRegion() {
   };
 
   return (
-    <section className="w-full bg-gradient-to-b from-white to-blue-50 flex flex-col items-center py-16 px-4 overflow-hidden">
+    <section id='region' className="w-full bg-gradient-to-b from-white to-blue-50 flex flex-col items-center py-16 px-4 overflow-hidden">
       <h2 className="text-3xl font-bold mb-12 text-center">Tour Categories</h2>
 
       {/* 🖥️ Desktop arco */}
       
       <div className="hidden  lg:flex gap-4 justify-center items-start w-full max-w-6xl flex-wrap">
         {cards.map((card, index) => (
-          <a href={card.link}
+          <a   target="_blank" href={card.link}
             key={index}
             className={`relative transition-all duration-300 hover:scale-105 hover:shadow-2xl rounded-3xl cursor-pointer ${card.offset} ${card.rotate}`}
           >
@@ -64,7 +64,7 @@ export default function CardRegion() {
           className="flex gap-4 overflow-x-auto px-2 scroll-smooth snap-x snap-mandatory scrollbar-none pb-4"
         >
           {cards.map((card, index) => (
-            <a href={card.link}
+            <a   target="_blank" href={card.link}
               key={index}
               className="flex-shrink-0 snap-center w-[140px] aspect-[3/4] rounded-xl overflow-hidden shadow-md bg-white relative transition-transform duration-300 hover:scale-105"
             >
