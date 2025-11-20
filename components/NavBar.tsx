@@ -16,9 +16,9 @@ export default function NavBar() {
         {/* 🗺️ Ubicación */}
         <div className="flex items-center overflow-hidden whitespace-nowrap">
           <IoLocationOutline className="mr-1 sm:mr-2 md:mr-4 flex-shrink-0" />
-          <span className="truncate">
+          <a className="truncate">
             Santa Marta, Magdalena, Colombia | Parque Nacional Tayrona
-          </span>
+          </a>
         </div>
 
         {/* ❓ Soporte solo visible en pantallas medianas hacia arriba */}

@@ -28,7 +28,6 @@ export default function RootLayout({
   return (
     <html lang="en">
      <head>
-      <link rel="canonical" href="https://bookingtayronapark.com/" />
      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
