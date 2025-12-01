@@ -12,22 +12,22 @@ interface LegalDocument {
 
 const documents: LegalDocument[] = [
   {
-    name: 'Decreto 1076 de 2015',
+    name: 'Reglas PNNC',
     file: '/1076.pdf',
     description: 'Reglamenta disposiciones sobre medio ambiente y desarrollo sostenible en Colombia.',
   },
   {
-    name: 'Plan de Manejo del PNN Sierra Nevada y Tayrona',
+    name: 'Plan de Manejo PNNC',
     file: '/plan-de-manejo-del-pnn-sierra-nevada-de-santa-marta-y-tayrona.pdf',
     description: 'Documento técnico que guía la conservación y uso sostenible del Parque Tayrona.',
   },
   {
-    name: 'Precios Transporte 2024-2025 Hotel Yachay Tayrona',
+    name: 'Tarifa de transporte PNNC',
     file: '/precios-transporte.pdf',
     description: 'Listado oficial de tarifas para transporte hacia y desde el Hotel Yachay.',
   },
   {
-    name: 'Resolución No. 695 - Tarifas de Ingreso PNNC 2025',
+    name: 'Tarifa de ingreso PNNC',
     file: '/695.pdf',
     description: 'Establece los valores actualizados para ingresar al Parque Nacional Tayrona en 2025.',
   },

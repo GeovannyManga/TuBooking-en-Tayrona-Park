@@ -37,7 +37,7 @@ export default function RoomCards() {
       <div className="max-w-7xl mx-auto text-center mb-6">
         <h3 className="text-sm text-blue-600 font-semibold">Tayrona Rooms</h3>
         <h2 className="text-3xl font-bold text-gray-800 mb-2">
-          Hospedajes disponibles en el Parque Tayrona
+          Hospedajes disponibles dentro del el Parque Tayrona
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto mb-6">
           Explora nuestras mejores opciones para disfrutar del paraíso natural con comodidad.

@@ -10,6 +10,7 @@ import Legal from "../components/legal";
 
 // 🔁 Carga dinámica del componente con SSR desactivado
 const Banner = dynamic(() => import("../components/Banner"), { ssr: false });
+const Map = dynamic(() => import("../components/Map"), { ssr: false});
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <NavBar />
       <Banner />
       <CardRegion />
+      <Map/>
       <Cards />
       <Legal />
       <CarrucelRegion />
