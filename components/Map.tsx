@@ -119,7 +119,7 @@ const Map = () => {
     L.marker([11.287187,-74.001063], { icon: punto })
       .bindTooltip("Entrada calabazo")
       .addTo(initializedMap);
-
+//comentarios
     // Limpiamos el mapa cuando el componente se desmonte
     return () => {
       initializedMap.remove();
